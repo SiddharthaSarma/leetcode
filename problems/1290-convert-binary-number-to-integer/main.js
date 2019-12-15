@@ -13,3 +13,17 @@ const getDecimalValue = function(head) {
   }
   return sum;
 };
+
+
+
+/**************************
+      SOLUTION - 2
+***************************/
+const getDecimalValue = function(head) {
+  let sum = 0;
+  while (head) {
+    sum = sum * 2 + head.val;
+    head = head.next;
+  }
+  return sum;
+};
