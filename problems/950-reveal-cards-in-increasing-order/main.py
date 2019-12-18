@@ -1,13 +1,13 @@
 class Solution:
     def deckRevealedIncreasing(self, deck: List[int]) -> List[int]:
         deck.sort()
-        outDeck = []
+        out_deck = []
         
         while len(deck) > 0 :
-            outDeck.append(deck.pop())
+            out_deck.append(deck.pop())
 
             if len(deck) > 0:
-                outDeck.append(outDeck.pop(0))
+                out_deck.append(out_deck.pop(0))
             
-        outDeck.reverse()
-        return outDeck
+        out_deck.reverse()
+        return out_deck
