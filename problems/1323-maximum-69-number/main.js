@@ -1,3 +1,6 @@
+/*******************
+    SOLUTION - 1
+*******************/
 const maximum69Number = function(num) {
   let str = num.toString();
   let result = '';
@@ -11,4 +14,11 @@ const maximum69Number = function(num) {
     }
   }
   return result;
+};
+
+/*******************
+    SOLUTION - 2
+*******************/
+const maximum69Number = function(num) {
+  return num.toString().replace('6', '9');
 };
