@@ -36,3 +36,28 @@ class Solution {
     return result;
   }
 };
+
+// solution 2
+class Solution {
+  public: string addBinary(string a, string b) {
+    string result = "";
+    int maxSize = max(a.size(), b.size());
+    if (a.size() > b.size()) b = result.append(maxSize - b.size(), '0') + b;
+    if (b.size() > a.size()) a = result.append(maxSize - a.size(), '0') + a;
+    result = "";
+    int carry = 0;
+    for (int i = maxSize - 1; i >= 0; i--) {
+      int aVal = a[i] - '0';
+      int bVal = b[i] - '0';
+      int sum = aVal + bVal + carry;
+      string val = to_string(sum % 2);
+      result = val + result;
+      carry = sum / 2;
+    }
+    if (carry) {
+      result = "1" + result;
+    }
+    return result;
+  }
+};
+
