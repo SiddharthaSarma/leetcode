@@ -27,3 +27,23 @@ class Solution {
     return minDistance;
   }
 };
+
+// Solution 2
+// Runtime: O(N) and space: O(H)
+class Solution {
+  public: int minDistance = INT_MAX;
+  TreeNode * prevNode;
+  void inorderTraversal(TreeNode * root) {
+    if (!root) return;
+    inorderTraversal(root -> left);
+    if (prevNode) {
+      minDistance = min(minDistance, root -> val - prevNode -> val);
+    }
+    prevNode = root;
+    inorderTraversal(root -> right);
+  }
+  int minDiffInBST(TreeNode * root) {
+    inorderTraversal(root);
+    return minDistance;
+  }
+};
