@@ -22,7 +22,7 @@ class Solution {
     inorderTraversal(root);
     int minDistance = INT_MAX;
     for (int i = 0; i < list.size() - 1; i++) {
-      minDistance = min(minDistance, abs(list[i] - list[i + 1]));
+      minDistance = min(minDistance, list[i + 1] - list[i]);
     }
     return minDistance;
   }
